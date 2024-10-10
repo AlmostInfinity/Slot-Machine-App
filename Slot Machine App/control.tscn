@@ -1,0 +1,94 @@
+[gd_scene load_steps=6 format=3 uid="uid://ndyksxkf4d5v"]
+
+[ext_resource type="Script" path="res://control.gd" id="1_dr0d3"]
+[ext_resource type="AudioStream" uid="uid://c8w433nqlyl73" path="res://cash-register-purchase-87313.mp3" id="2_tg6lu"]
+[ext_resource type="AudioStream" uid="uid://doicm1kedpdg7" path="res://goodresult-82807.mp3" id="3_nwigf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_byjka"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0mjqw"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dr0d3")
+
+[node name="Roll button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -145.0
+offset_top = 109.0
+offset_right = 145.0
+offset_bottom = 231.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 51
+theme_override_styles/normal = SubResource("StyleBoxFlat_byjka")
+text = "ROLL
+"
+
+[node name="roll sfx" type="AudioStreamPlayer" parent="Roll button"]
+stream = ExtResource("2_tg6lu")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -567.0
+offset_top = -289.0
+offset_right = 567.0
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 120
+
+[node name="Slot 1" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 161
+theme_override_styles/normal = SubResource("StyleBoxFlat_0mjqw")
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot 2" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 161
+theme_override_styles/normal = SubResource("StyleBoxFlat_0mjqw")
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot 3" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 161
+theme_override_styles/normal = SubResource("StyleBoxFlat_0mjqw")
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WINNER sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_nwigf")
+
+[connection signal="pressed" from="Roll button" to="." method="_on_roll_button_pressed"]

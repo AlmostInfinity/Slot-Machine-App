@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://be3jeoyf3s0q4"
+path="res://.godot/imported/Cha ching.mp3-f7fc67e16fad37718b73677b6aaaa8e0.mp3str"
+
+[deps]
+
+source_file="res://Cha ching.mp3"
+dest_files=["res://.godot/imported/Cha ching.mp3-f7fc67e16fad37718b73677b6aaaa8e0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
